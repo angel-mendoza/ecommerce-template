@@ -1,0 +1,6 @@
+{
+  "presets": [
+    "@babel/preset-env", // se usa para poder compilar en ES6
+    "@babel/preset-react" // para trabajar con los archivos re react o los JSX
+  ]
+}
