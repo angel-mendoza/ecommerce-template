@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Badge,
   Button,
   Navbar
 } from 'react-bootstrap'
@@ -24,6 +25,7 @@ const NavbarApp = ({ handleShowMenu, handleShowCart }) => {
       </Navbar.Brand>
       <Button onClick={() => handleShowCart()} className='float-end' variant="light">
         <GrCart size="1.5rem" />
+        <Badge className='badge-cart' bg="primary">1</Badge>
       </Button>
     </Navbar>
   )

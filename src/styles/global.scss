@@ -10,5 +10,9 @@ html, body {
 }
 
 nav{
-  justify-content: space-between;
+  justify-content: space-between !important;
+  .badge-cart{
+    top: -10px !important;
+    left: -10px !important;
+  }
 }
