@@ -13,12 +13,15 @@ const Layout = ({ children }) => {
   const handleCloseCart = () => setShowCart(false)
   const handleShowCart = () => setShowCart(true)
 
+  console.log(showCart, showMenu)
   return (
-    <div id='layout-app' >
+    <div>
       <SidebarApp show={showMenu} handleClose={handleCloseMenu} />
       <SidebarApp title="Your Cart" show={showCart} handleClose={handleCloseCart} placement='end' />
       <Navbar handleShowMenu={handleShowMenu} handleShowCart={handleShowCart} />
-      { children }
+      <div id='layout-app' >
+        { children }
+      </div>
     </div>
   )
 }

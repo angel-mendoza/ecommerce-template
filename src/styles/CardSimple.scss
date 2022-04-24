@@ -1,0 +1,65 @@
+@import 'vars';
+.card-simple{
+  margin: 20px 20px 0 20px;
+  padding: 15px;
+  background-color: $primary;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-clip: border-box;
+  border: 1px solid rgba(255,255,255,.125);
+  border-radius: 0.25rem;
+  min-height: 345px;
+  justify-content: end;
+  max-width: 100%;
+  span.btn-like{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  img.image-product{
+    height: auto;
+    max-width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    z-index: 2;
+  }
+  img.brand-card{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 70%;
+    z-index: 1;
+  }
+  div.description-body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(255,255,255,.125);
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 15px;
+    button.btn{
+      border: 1px solid $gray;
+    }
+    h2{
+      font-family: $font-product;
+      font-size: 1.5rem;
+      color: $gray;
+    }
+    div.footer{
+      font-family: $font-product;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      color: $gray;
+    }
+  }
+}
