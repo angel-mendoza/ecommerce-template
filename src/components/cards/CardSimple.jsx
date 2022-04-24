@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { GrCart } from 'react-icons/gr'
 import { AiOutlineHeart } from 'react-icons/ai'
 
-import '@/styles/CardSimple.scss'
+import AppContext from '@/context/AppContext'
+
 import brandCard from '@/assets/logo/brandCard.svg'
+import '@/styles/CardSimple.scss'
 
 const CardSimple = ({ product }) => {
+  const { selectProduct } = useContext(AppContext)
+
+  const handleClick = (item) => {
+    selectProduct(item)
+  }
+
   return (
     <div className='card-simple'>
       <span className='btn-like'>
@@ -25,7 +33,7 @@ const CardSimple = ({ product }) => {
         <h2>{ product.name }</h2>
         <div className='footer'>
           <h5>$ {product.price}</h5>
-          <button className='btn'>
+          <button className='btn' onClick={() => handleClick(product)} >
             <GrCart size="1.5rem" />
           </button>
         </div>

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Badge,
   Button,
   Navbar
 } from 'react-bootstrap'
+
+import AppContext from '@/context/AppContext'
 
 import { FaBars } from 'react-icons/fa'
 import { GrCart } from 'react-icons/gr'
@@ -11,6 +13,7 @@ import { GrCart } from 'react-icons/gr'
 import Logo from '@/assets/logo/BrandLogo.svg'
 
 const NavbarApp = ({ handleShowMenu, handleShowCart }) => {
+  const { state } = useContext(AppContext)
   return (
     <Navbar bg="light" variant="light" fixed="top" >
       <Button onClick={() => handleShowMenu()} variant="light">
@@ -25,7 +28,7 @@ const NavbarApp = ({ handleShowMenu, handleShowCart }) => {
       </Navbar.Brand>
       <Button onClick={() => handleShowCart()} className='float-end' variant="light">
         <GrCart size="1.5rem" />
-        <Badge className='badge-cart' bg="primary">1</Badge>
+        { state.cart.length > 0 ? <Badge className='badge-cart' bg="primary">{state.cart.length}</Badge> : null}
       </Button>
     </Navbar>
   )

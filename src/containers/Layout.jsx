@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
   const handleCloseCart = () => setShowCart(false)
   const handleShowCart = () => setShowCart(true)
 
-  console.log(showCart, showMenu)
   return (
     <div>
       <SidebarApp show={showMenu} handleClose={handleCloseMenu} />
