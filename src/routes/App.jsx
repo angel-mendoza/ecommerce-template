@@ -1,10 +1,12 @@
 import React from 'react'
+import Layout from '../containers/Layout.jsx'
+import '../styles/global.scss'
 
 const App = () => {
   return (
-    <div>
+    <Layout>
       <h1>AQUIII</h1>
-    </div>
+    </Layout>
   )
 }
 
