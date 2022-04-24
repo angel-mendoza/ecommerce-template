@@ -11,12 +11,12 @@ import { GrCart } from 'react-icons/gr'
 
 import Logo from '../../assets/logo/BrandLogo.svg'
 
-const NavbarApp = () => {
+const NavbarApp = ({ handleShowMenu, handleShowCart }) => {
   return (
     <Navbar bg="light" variant="light" fixed="top" >
       <Container fluid>
         <Col>
-          <Button variant="light">
+          <Button onClick={() => handleShowMenu()} variant="light">
             <FaBars size="1.5rem" />
           </Button>
         </Col>
@@ -30,7 +30,7 @@ const NavbarApp = () => {
           </Navbar.Brand>
         </Col>
         <Col>
-          <Button className='float-end' variant="light">
+          <Button onClick={() => handleShowCart()} className='float-end' variant="light">
             <GrCart size="1.5rem" />
           </Button>
         </Col>
