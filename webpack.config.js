@@ -1,6 +1,7 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/index.js', // punto de entrada de la aplicacion
@@ -9,6 +10,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   mode: 'development',
+  // mode: process.env.APP_MODE,
   resolve: { // son las extenciones de los tipos de archivos que soportara
     extensions: ['.js', 'jsx']
   },
@@ -36,6 +38,7 @@ module.exports = {
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx']
-    })
+    }),
+    new Dotenv()
   ]
 }
