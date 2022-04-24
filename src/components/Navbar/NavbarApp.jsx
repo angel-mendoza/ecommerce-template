@@ -9,7 +9,7 @@ import {
 import { FaBars } from 'react-icons/fa'
 import { GrCart } from 'react-icons/gr'
 
-import Logo from '../../assets/logo/BrandLogo.svg'
+import Logo from '@/assets/logo/BrandLogo.svg'
 
 const NavbarApp = ({ handleShowMenu, handleShowCart }) => {
   return (

@@ -1,0 +1,19 @@
+@import 'vars';
+
+#Not-found-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 120px);
+  text-align: center;
+  color: $primary;
+  h2{
+    font-family: $font-title;
+    font-size: 3rem;
+  }
+  h4{
+    font-family: $font-title;
+    font-size: 2rem;
+  }
+}

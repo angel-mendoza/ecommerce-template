@@ -12,7 +12,10 @@ module.exports = {
   },
   mode: 'development',
   resolve: { // son las extenciones de los tipos de archivos que soportara
-    extensions: ['.js', 'jsx']
+    extensions: ['.js', 'jsx'],
+    alias: {
+      '@': path.resolve(__dirname, 'src/')
+    }
   },
   module: { // son los modulos externos que se usan para poder ejecutar el codigo
     rules: [

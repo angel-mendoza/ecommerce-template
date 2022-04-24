@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar/NavbarApp.jsx'
-import SidebarApp from '../components/Sidebars/SidebarApp.jsx'
-import '../styles/Layout.scss'
+import Navbar from '@/components/Navbar/NavbarApp.jsx'
+import SidebarApp from '@/components/Sidebars/SidebarApp.jsx'
+import '@/styles/Layout.scss'
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)

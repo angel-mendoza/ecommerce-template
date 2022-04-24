@@ -1,0 +1,19 @@
+$primary: #40d4d9;
+$secondary: #ffd283;
+
+$font-title: 'Dancing Script', cursive;
+
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);
+
+@each $name, $color in $colors {
+  .text-app-color-#{$name}{
+    color: $color;
+  }
+  .bg-app-#{$name}{
+    background-color: $color;
+  }
+}

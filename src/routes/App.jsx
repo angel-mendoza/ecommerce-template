@@ -1,12 +1,21 @@
 import React from 'react'
-import Layout from '../containers/Layout.jsx'
-import '../styles/global.scss'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from '@/containers/Layout.jsx'
+import '@/styles/global.scss'
+
+import Home from '@/pages/Home.jsx'
+import NotFound from '@/pages/NotFound.jsx'
 
 const App = () => {
   return (
-    <Layout>
-      <h1>AQUIII</h1>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
     </Layout>
+    </BrowserRouter>
   )
 }
 
