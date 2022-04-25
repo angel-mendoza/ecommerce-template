@@ -1,0 +1,10 @@
+@import 'vars';
+
+#sidebar-cart{
+  .offcanvas-header .offcanvas-title{
+    font-family: $font-product;
+    color: $gray;
+    text-align: center;
+    font-size: 2rem;
+  }
+}

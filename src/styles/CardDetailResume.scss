@@ -1,0 +1,33 @@
+@import 'vars';
+
+.Card-detail-resume{
+  .accordion{
+    border: 2px solid $primary;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+    .accordion-header{
+      .accordion-button{
+        background-color: $gray-light;
+        color: $gray;
+      }
+      .accordion-button.collapsed{
+        background-color: #fff;
+      }
+    }
+    .accordion-body{
+      .columm-data{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        span.value{
+          font-weight: bold;
+        }
+        .total{
+          font-family: $font-product;
+          color: $primary;
+        }
+      }
+    }
+  }
+}

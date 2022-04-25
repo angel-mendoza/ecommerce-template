@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '@/components/Navbar/NavbarApp.jsx'
 import SidebarApp from '@/components/Sidebars/SidebarApp.jsx'
+import SidebarCart from '@/components/Sidebars/SidebarCart.jsx'
 import '@/styles/Layout.scss'
 
 const Layout = ({ children }) => {
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <SidebarApp show={showMenu} handleClose={handleCloseMenu} />
-      <SidebarApp title="Your Cart" show={showCart} handleClose={handleCloseCart} placement='end' />
+      <SidebarCart show={showCart} handleClose={handleCloseCart} />
       <Navbar handleShowMenu={handleShowMenu} handleShowCart={handleShowCart} />
       <div id='layout-app' >
         { children }

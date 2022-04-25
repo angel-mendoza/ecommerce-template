@@ -1,0 +1,14 @@
+@import 'vars';
+.card-detail-resume-empty{
+  font-family: $font-product;
+  padding: 2.5rem 1.5rem;
+  border: 2px dashed $gray-light;
+  border-radius: 0.25rem;
+  text-align: center;
+  h3{
+    color: $primary;
+  }
+  h5{
+    color: $gray;
+  }
+}
