@@ -1,10 +1,13 @@
 import React from 'react'
-// import { AiOutlineSearch } from 'react-icons/ai'
-import Accordion from 'react-bootstrap/Accordion'
+import { BsTrash } from 'react-icons/bs'
+import {
+  Button,
+  Accordion
+} from 'react-bootstrap'
 
 import '@/styles/CardDetailResume.scss'
 
-const CardDetailResume = ({ product }) => {
+const CardDetailResume = ({ product, remove }) => {
   return (
     <div className='Card-detail-resume'>
     <Accordion>
@@ -22,6 +25,11 @@ const CardDetailResume = ({ product }) => {
           <div className="columm-data">
             <span className="title">Total to pay for the product</span>
             <span className='total'>${product.price * product.quantity}</span>
+          </div>
+          <div className="d-grid gap-2 mt-3">
+            <Button variant='danger' onClick={() => remove(product)} >
+              <BsTrash /> Eliminar
+            </Button>
           </div>
         </Accordion.Body>
       </Accordion.Item>

@@ -54,10 +54,24 @@ const useInitalState = () => {
   }
 
   const addToCart = (payload) => {
+    const newProduct = state.cart.find(item => item.id === payload.id)
+    let newCartList = []
+
+    if (newProduct) {
+      newCartList = state.cart.filter(item => item.id !== payload.id)
+      newCartList.push({
+        ...payload,
+        quantity: newProduct.quantity + payload.quantity
+      })
+    } else {
+      newCartList = state.cart
+      newCartList.push(payload)
+    }
+
     setState({
       ...state,
       showDetail: false,
-      cart: [...state.cart, payload]
+      cart: newCartList
     })
   }
 

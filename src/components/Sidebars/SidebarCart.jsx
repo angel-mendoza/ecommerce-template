@@ -8,7 +8,7 @@ import CardDetailResumeEmpty from '@/components/cards/CardDetailResumeEmpty.jsx'
 import '@/styles/SidebaCart.scss'
 
 const SidebaCart = (props) => {
-  const { state } = useContext(AppContext)
+  const { state, removeCart } = useContext(AppContext)
   return (
     <Offcanvas
       id="sidebar-cart"
@@ -23,7 +23,11 @@ const SidebaCart = (props) => {
         {
           state.cart.length > 0
             ? state.cart.map(item => (
-              <CardDetailResume key={`cart-detail-resumen-${item.id}`} product={item} />
+              <CardDetailResume
+                key={`cart-detail-resumen-${item.id}`}
+                product={item}
+                remove={removeCart}
+              />
             ))
             : <CardDetailResumeEmpty />
 
