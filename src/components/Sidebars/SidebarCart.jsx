@@ -1,9 +1,6 @@
 import React, { useContext } from 'react'
 import AppContext from '@/context/AppContext'
-import {
-  Button,
-  Offcanvas
-} from 'react-bootstrap'
+import Offcanvas from 'react-bootstrap/Offcanvas'
 
 import { MdOutlinePayments } from 'react-icons/md'
 
@@ -15,7 +12,6 @@ import '@/styles/SidebaCart.scss'
 
 const SidebaCart = (props) => {
   const { state, removeCart } = useContext(AppContext)
-
   return (
     <Offcanvas
       id="sidebar-cart"
@@ -42,9 +38,9 @@ const SidebaCart = (props) => {
           <>
             <CardTotal total={state.amount} />
             <div className="d-grid gap-2 mt-4">
-              <Button size='lg' variant='success' >
+              <a className='btn btn-success' href={`https://wa.me/+593983211971/?text=${state.dataWts}`}>
                 <MdOutlinePayments size="2rem" /> Process the Payment
-              </Button>
+              </a>
             </div>
           </>
 

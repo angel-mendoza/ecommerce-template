@@ -4,7 +4,8 @@ const InitalState = {
   cart: [],
   amount: 0,
   showDetail: false,
-  product: {}
+  product: {},
+  dataWts: ''
 }
 
 const useInitalState = () => {
@@ -20,6 +21,7 @@ const useInitalState = () => {
 
       setState({
         ...state,
+        dataWts: prepareUrl(),
         amount: newTotal
       })
     }
@@ -70,6 +72,15 @@ const useInitalState = () => {
     })
   }
 
+  const prepareUrl = () => {
+    const body = []
+    body.push('Good evening. I would like to place an order')
+    state.cart.forEach(item => {
+      body.push(`${item.name} quantity: ${item.quantity}`)
+    })
+    const bodyString = body.toString()
+    return bodyString.replaceAll(',', '%0A')
+  }
   return {
     state,
     addToCart,
