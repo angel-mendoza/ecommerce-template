@@ -1,14 +1,21 @@
 import React, { useContext } from 'react'
 import AppContext from '@/context/AppContext'
-import Offcanvas from 'react-bootstrap/Offcanvas'
+import {
+  Button,
+  Offcanvas
+} from 'react-bootstrap'
+
+import { MdOutlinePayments } from 'react-icons/md'
 
 import CardDetailResume from '@/components/cards/CardDetailResume.jsx'
 import CardDetailResumeEmpty from '@/components/cards/CardDetailResumeEmpty.jsx'
+import CardTotal from '@/components/cards/CardTotal.jsx'
 
 import '@/styles/SidebaCart.scss'
 
 const SidebaCart = (props) => {
   const { state, removeCart } = useContext(AppContext)
+
   return (
     <Offcanvas
       id="sidebar-cart"
@@ -30,8 +37,18 @@ const SidebaCart = (props) => {
               />
             ))
             : <CardDetailResumeEmpty />
+          }
+        {state.cart.length > 0 && (
+          <>
+            <CardTotal total={state.amount} />
+            <div className="d-grid gap-2 mt-4">
+              <Button size='lg' variant='success' >
+                <MdOutlinePayments size="2rem" /> Process the Payment
+              </Button>
+            </div>
+          </>
 
-        }
+        )}
       </Offcanvas.Body>
     </Offcanvas>
   )

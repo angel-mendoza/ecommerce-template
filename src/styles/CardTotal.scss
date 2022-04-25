@@ -1,0 +1,15 @@
+@import 'vars';
+.card-total{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-product;
+  padding: 1rem;
+  border: 2px dashed $gray;
+  background-color: $gray-light;
+  border-radius: 0.25rem;
+  .amount{
+    color: $primary;
+    font-size: 1.7rem;
+  }
+}

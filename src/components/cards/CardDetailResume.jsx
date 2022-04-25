@@ -28,7 +28,7 @@ const CardDetailResume = ({ product, remove }) => {
           </div>
           <div className="d-grid gap-2 mt-3">
             <Button variant='danger' onClick={() => remove(product)} >
-              <BsTrash /> Eliminar
+              <BsTrash /> Remove
             </Button>
           </div>
         </Accordion.Body>
